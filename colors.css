@@ -1,0 +1,14 @@
+:root {
+  --bg-main: #fff;
+  --bg-secondary: #eee;
+  --bg-screen: #aaa;
+  --bg-number: #9e9bbd;
+  --bg-operation: #7f73e9;
+  --bg-ac: #e75858;
+
+  --color-main: #333;
+  --color-secondary: #555;
+  --color-danger: red;
+
+  --shadow-main: rgba(51, 51, 51, 0.6);
+}
