@@ -1,4 +1,5 @@
 @import "colors.css";
+@import "utils.css";
 
 * {
   margin: 0;
@@ -11,10 +12,21 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  background-image: radial-gradient(#eee 1px, transparent 0);
+  background-size: 10px 10px;
+  background-position: -20px -20px;
 }
 
 main {
-  background: var(--bg-main);
+  /* background: var(--bg-main); */
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+
   margin: 20px;
   padding: 20px;
   display: flex;
@@ -22,28 +34,46 @@ main {
   width: 300px;
   height: 500px;
   border-radius: 10px;
-  box-shadow: 0 0 6px 6px var(--shadow-main);
+  border: 1px solid var(--color-main);
+  box-shadow: 0 0 6px 6px var(--shadow-main), 6px 6px 6px 6px var(--shadow-main);
 }
 
-header > h1 {
+hr {
+  border: 1px solid var(--color-main);
+}
+
+h1 {
   font-style: italic;
-  color: var(--color-main);
+  /* color: var(--color-main); */
+  background: -webkit-linear-gradient(180deg, #eee, #333);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #screen {
-  background: var(--bg-screen);
-  width: calc(100% - 20px);
+  background: rgb(219, 218, 244);
+  background: radial-gradient(
+    circle,
+    rgba(219, 218, 244, 1) 0%,
+    rgba(131, 132, 201, 1) 100%
+  );
+  width: calc(100% - 40px);
   height: 100px;
-  padding: 10px;
+  padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 0 4px 4px var(--shadow-main),
+    inset 0 0 6px 6px var(--color-secondary);
   display: flex;
   flex-direction: column;
   align-items: end;
   justify-content: space-around;
+  font-family: "Handjet", cursive;
+  overflow: hidden;
   #errorMsg {
     color: var(--color-danger);
-    font-size: 0.8rem;
-    font-weight: 300;
+    font-size: 1rem;
+    font-weight: 500;
     font-style: italic;
   }
   #operation {
@@ -56,30 +86,46 @@ header > h1 {
 }
 
 #buttonSection {
-  padding-top: 20px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   .number {
-    background: var(--bg-number);
+    background: rgb(181, 179, 235);
+    background: radial-gradient(
+      circle,
+      rgba(181, 179, 235, 1) 0%,
+      rgba(105, 107, 177, 1) 100%
+    );
   }
   .operation {
-    background: var(--bg-operation);
+    background: rgb(116, 112, 238);
+    background: radial-gradient(
+      circle,
+      rgba(116, 112, 238, 1) 0%,
+      rgba(37, 39, 128, 1) 100%
+    );
     font-weight: 900;
   }
   .ac {
-    background: var(--bg-ac);
+    background: rgb(233, 153, 102);
+    background: radial-gradient(
+      circle,
+      rgba(233, 153, 102, 1) 0%,
+      rgba(210, 32, 27, 1) 100%
+    );
   }
 }
 
 button {
-  min-width: 56px;
-  height: 56px;
+  min-width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-main);
   border-radius: 10px;
   box-shadow: 0 0 2px 2px var(--shadow-main);
   transition: all 0.3s ease-in-out;
+  margin: 4px;
 }
 
 button:active {
-  box-shadow: none;
+  box-shadow: inset 0 0 4px 4px var(--shadow-main);
 }
